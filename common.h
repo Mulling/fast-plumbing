@@ -1,6 +1,5 @@
 #pragma once
 
-#include <sys/cdefs.h>
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif

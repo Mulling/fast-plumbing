@@ -14,7 +14,8 @@
 
 #include "common.h"
 
-[[maybe_unused]] void read_read() {
+[[maybe_unused]]
+void read_read() {
     uint8_t* buffer = page_aligned_alloc(ENTRIES);
 
     ssize_t total = PAYLOAD;
@@ -34,7 +35,8 @@
     free(buffer);
 }
 
-[[maybe_unused]] void read_readv() {
+[[maybe_unused]]
+void read_readv() {
     struct iovec iovec = { .iov_base = page_aligned_alloc(ENTRIES),
                            .iov_len = PAGE_SIZE * ENTRIES };
 
@@ -55,7 +57,8 @@
     free(iovec.iov_base);
 }
 
-[[maybe_unused]] void read_splice() {
+[[maybe_unused]]
+void read_splice() {
     char* sink_file = "/dev/null";
 
     int sink = open(sink_file, O_WRONLY);

@@ -13,7 +13,8 @@
 
 #include "common.h"
 
-[[maybe_unused]] void write_write() {
+[[maybe_unused]]
+void write_write() {
     uint8_t* chunk = page_aligned_alloc(ENTRIES);
 
     memset(chunk, 0x5F, sizeof(uint8_t) * PAGE_SIZE * ENTRIES);
@@ -35,7 +36,8 @@
     free(chunk);
 }
 
-[[maybe_unused]] void write_writev() {
+[[maybe_unused]]
+void write_writev() {
     struct iovec iovec = { .iov_base = page_aligned_alloc(ENTRIES),
                            .iov_len = PAGE_SIZE * ENTRIES };
 
@@ -58,7 +60,8 @@
     free(iovec.iov_base);
 }
 
-[[maybe_unused]] void write_vmsplice() {
+[[maybe_unused]]
+void write_vmsplice() {
     uint8_t* buffer = page_aligned_alloc(ENTRIES);
 
     memset(buffer, 0x5F, sizeof(uint8_t) * PAGE_SIZE * ENTRIES);
