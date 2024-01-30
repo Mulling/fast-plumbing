@@ -1,0 +1,6 @@
+*.o
+read
+write
+compile_commands.json
+*.txt
+.cache
